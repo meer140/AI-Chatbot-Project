@@ -2,7 +2,7 @@ export function Sidebar({ chats, setCurrentChatId, createNewChat }) {
     return (
         <div className="sidebar">
             <div className="sidebar-top">
-                <div className="sidebar-logo">⚡ ChatBot</div>
+                <div className="sidebar-logo">ChatBot</div>
                 <button className="new-chat-btn" onClick={createNewChat}>
                     + New Chat
                 </button>
