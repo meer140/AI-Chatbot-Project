@@ -140,37 +140,10 @@ To deploy your own version:
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Vercel will automatically build and deploy on every push to main
+   
 
 ---
 
-## 💡 Tips for Development
-
-### React + Vite Enhancements
-
-For Fast Refresh in production applications with improved bundle size, consider using the SWC plugin:
-
-```bash
-npm install -D @vitejs/plugin-react-swc
-```
-
-Then update `vite.config.js`:
-```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-
-export default defineConfig({
-  plugins: [react()],
-})
-```
-
-### Best Practices
-
-- Use TypeScript for better type safety
-- Follow ESLint rules for consistent code style
-- Run `npm run lint` before committing changes
-- Test your changes with `npm run dev` before building
-
----
 
 ## 📄 License
 
@@ -190,4 +163,3 @@ For issues, questions, or suggestions, please open an [issue](https://github.com
 
 ---
 
-**Happy Coding! 🎉**
