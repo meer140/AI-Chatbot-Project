@@ -1,6 +1,7 @@
 .app {
   display: flex;
   height: 100vh;
+  height: 100dvh;
   background: black;
   position: relative;
   overflow: hidden;
@@ -21,6 +22,7 @@
 .sidebar {
   width: 260px;
   height: 100vh;
+  height: 100dvh;
   background: black;
   border-right: 1px solid #252836;
   display: flex;
@@ -340,6 +342,7 @@
     left: 0;
     width: 280px;
     height: 100vh;
+    height: 100dvh;
     z-index: 100;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8);
   }

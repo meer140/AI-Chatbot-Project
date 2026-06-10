@@ -9,6 +9,13 @@ export function ChatInput({ setChats, currentChatId }) {
         setInputText(event.target.value);
     }
 
+    const generateUUID = () => {
+        if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+            return crypto.randomUUID();
+        }
+        return Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+    };
+
     async function sendMessage() {
         // Bug 2 & 3: Guard against no chat selected or empty input
         if (!currentChatId || !inputText.trim()) return;
@@ -16,14 +23,14 @@ export function ChatInput({ setChats, currentChatId }) {
         const userMessage = {
             message: inputText,
             sender: "user",
-            id: crypto.randomUUID(),
+            id: generateUUID(),
             time: dayjs().valueOf()
         };
 
         const loadingMessage = {
             message: "",
             sender: "bot",
-            id: crypto.randomUUID(),
+            id: generateUUID(),
             status: "loading",
             time: dayjs().valueOf()  // Bug 8: bot messages now get a time
         };

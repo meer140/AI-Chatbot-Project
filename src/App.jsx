@@ -20,9 +20,16 @@ function App() {
 
   const currentChat = chats.find((chat) => chat.id === currentChatId);
 
+  const generateUUID = () => {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+      return crypto.randomUUID();
+    }
+    return Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+  };
+
   function createNewChat() {
     const newChat = {
-      id: crypto.randomUUID(),
+      id: generateUUID(),
       title: "New Chat",
       messages: []
     };
