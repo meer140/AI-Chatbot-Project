@@ -35,6 +35,7 @@ function App() {
     };
     setChats((prev) => [...prev, newChat]);
     setCurrentChatId(newChat.id);
+    setSidebarOpen(false);
   }
 
   return (
