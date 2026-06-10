@@ -12,6 +12,12 @@
   }
 }
 
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 .sidebar {
   width: 260px;
   height: 100vh;
