@@ -6,6 +6,8 @@ import './App.css'
 
 function App() {
 
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);
+
   const [chats, setChats] = useState(
     JSON.parse(localStorage.getItem("chats")) || []
   );
@@ -30,13 +32,30 @@ function App() {
 
   return (
     <div className="app">
+      
       <Sidebar
         chats={chats}
         setCurrentChatId={setCurrentChatId}
         createNewChat={createNewChat}
+        sidebarOpen = {sidebarOpen}
+        setSidebarOpen = {setSidebarOpen}
       />
 
       <div className="chat-area">
+        <div className="chat-area-header">
+          {!sidebarOpen && (
+            <button 
+              className="sidebar-btn-closed" 
+              onClick={() => setSidebarOpen(true)}
+              title="Open Sidebar"
+            >
+              <i className="fa-solid fa-bars"></i>
+            </button>
+          )}
+          <div className="chat-area-header-dot"></div>
+          <span>{currentChat ? currentChat.title : "ChatBot"}</span>
+        </div>
+
         {!currentChatId ? (
           <div className="welcome-screen">
             <div className="welcome-icon">🤖</div>
